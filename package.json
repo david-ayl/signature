@@ -1,0 +1,43 @@
+{
+  "name": "starter_big_image",
+  "version": "1.0.0",
+  "description": "Support starter with big image",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "prod": "gulp --env=prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adyoulike/advertiser-demo-generator.git"
+  },
+  "keywords": [
+    "adyoulike",
+    "advertiser"
+  ],
+  "author": "adyoulike",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adyoulike/advertiser-demo-generator/issues"
+  },
+  "homepage": "https://github.com/Adyoulike/advertiser-demo-generator#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
