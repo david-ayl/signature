@@ -17,7 +17,7 @@ function uglifyIfNeeded() {
 }
 
 
-gulp.task("default", ["sass", "js", "images", "fonts", "html"], () => {
+gulp.task("default", ["sass", "js", "images", "fonts", "html", "lib"], () => {
 
   browserSync.init({
     server: {
@@ -32,6 +32,8 @@ gulp.task("default", ["sass", "js", "images", "fonts", "html"], () => {
   gulp.watch("src/scss/**/*.scss", ["sass"]);
 
   gulp.watch("src/images/*", ["images"]);
+
+  gulp.watch("src/scripts/lib/*.js", ["lib"]);
 
 });
 
@@ -50,6 +52,12 @@ gulp.task("images", () => {
 gulp.task("html", () => {
   return gulp.src("src/index.html")
   .pipe(gulp.dest("./dist/"))
+  .pipe(browserSync.stream());
+});
+
+gulp.task("lib", () => {
+  return gulp.src("src/scripts/lib/*.js")
+  .pipe(gulp.dest("./dist/scripts/lib/"))
   .pipe(browserSync.stream());
 });
 

@@ -1,2 +1,122 @@
 @import "partials/layout.scss";
 @import "partials/loader.scss";
+
+#form:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+label{
+  display:block;
+}
+.form_unit{
+  width:50%;
+  float:left;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+#signature_global_wrapper{
+  position:relative;
+  box-shadow:0px 5px 50px #e3e3e3;
+  border:2px solid #199cb6;
+  padding:10px;
+  width: 500px;
+  margin: 0 auto;
+  .btn{
+    cursor:pointer;
+    position: absolute;
+    right: 0;
+    bottom:0;
+    border: none;
+    color: #fff;
+    background: #199cb6;
+    padding: 10px 30px;
+    font-family: 'Futura';
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  & > table{
+    margin:0 auto;
+  }
+}
+
+#scrollable_wrapper{
+  overflow-x:scroll;
+  margin:0 0 40px 0;
+  position:relative;
+}
+
+#events_wrapper{
+  margin:20px 0;
+  padding:40px 0;
+  display:flex;
+  width:100%;
+  justify-content:flex-start;
+  align-items:top;
+  .event_unit{
+    box-shadow:0px 5px 50px #e3e3e3;
+    transition-duration:0.3s;
+    border-radius:3px;
+    padding:30px 10px 10px 10px;
+    position:relative;
+    display:inline-block;
+    min-width:150px;
+    margin:0 10px;
+    border:1px solid #cccccc;
+    &:first-of-type{
+      margin:0 10px 0 0;
+    }
+    &:last-of-type{
+      margin:0 0 0 10px;
+    }
+  }
+  .event_img{
+    display:block;
+    width:100%;
+  }
+}
+.radio_input{
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  width:100%;
+  height:100%;
+  display:block;
+  &:active, &:focus{
+    & + .radio_label{
+      &:after{
+        opacity:1;
+      }
+    }
+  }
+}
+.radio_label{
+  pointer-events: none;
+  position:absolute;
+  top:5px;
+  width:15px;
+  height:15px;
+  border:2px solid #199cb6;
+  border-radius:50%;
+  left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  &:after{
+    display:block;
+    content:"";
+    width:9px;
+    height:9px;
+    background-color:#199cb6;
+    border-radius:50%;
+    top: 3px;
+    left: 3px;
+    position: absolute;
+    opacity:0;
+    transition-duration:0.3s;
+  }
+}

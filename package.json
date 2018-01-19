@@ -1,7 +1,7 @@
 {
-  "name": "starter_big_image",
+  "name": "starter_little_image",
   "version": "1.0.0",
-  "description": "Support starter with big image",
+  "description": "Support starter with little image",
   "main": "index.js",
   "scripts": {
     "start": "gulp",

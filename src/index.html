@@ -6,7 +6,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 
-        <title>ADYOULIKE | Deep Native Advertising</title>
+        <title>ADYOULIKE I Deep Native Advertising</title>
         <meta name="description" content="The AI-Powered Native Advertising Platform." />
         <meta name="keywords" content="native advertising, native, advertising, mémorisation, visibilité, engagement, affinité, in stream, brand content, native ad, content marketing, viral video, mobile, ad exchange, rtb, seo, studio, content creation, ssp, display, roi, adserver, saas, ad revolution, performance, experience, advertiser, publisher, programmatic, ux, dna, infeed, adyoulike, ayl, dashboard" />
 
@@ -14,6 +14,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:200,300,400" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
         <link rel="stylesheet" href="./css/main.css" />
+
+        <!-- JS -->
+        <script type="text/javascript" src="scripts/lib/clipboard.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
 
         <meta property="og:site_name" content="ADYOULIKE" />
         <meta property="og:site" content="www.adyoulike.com" />
@@ -45,17 +49,6 @@
 
     <body>
 
-        <div id="main_loader">
-          <div id="logo_container">
-            <div id="effect_logo_1" class="effect_logo"></div>
-            <div id="effect_logo_2" class="effect_logo"></div>
-            <div id="effect_logo_3" class="effect_logo"></div>
-            <div id="logo_bg_container">
-              <img src="./images/logo.png" id="logo_loader">
-            </div>
-          </div>
-        </div>
-
         <svg class = "hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -86,17 +79,155 @@
             </defs>
         </svg>
 
+
+        <div id="main_loader" style="display:none;">
+          <div id="logo_container">
+            <div id="effect_logo_1" class="effect_logo"></div>
+            <div id="effect_logo_2" class="effect_logo"></div>
+            <div id="effect_logo_3" class="effect_logo"></div>
+            <div id="logo_bg_container">
+              <img src="./images/logo.png" id="logo_loader">
+            </div>
+          </div>
+        </div>
+
         <div id="main">
 
             <section class="wrapper nobackground">
-                <div class="page_left"></div>
-                <div class="page_right">
+                <div class="small_background"></div>
+                <div class="full_content">
                   <div id="content">
-                    <h1 class="alternative">Main Title</h1>
-                    <h2>ADYOULIKE Subtitle</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
-                    <a href="#" target="_blank" class="button_action button_black">Link n°1</a>
-                    <a href="#" target="_blank" class="button_action button_blue">Link n°2</a>
+                    <h1>NEW SIGNATURE</h1>
+                    <div id="form">
+                      <div class="form_unit">
+                        <div class="input_unit">
+                          <label>First Name</label>
+                          <input type="text" placeholder="ex: John" data-bind="firstname" name="firstname">
+                        </div>
+
+                        <div class="input_unit">
+                          <label>Last Name</label>
+                          <input type="text" placeholder="ex: Doe" data-bind="lastname" name="lastname">
+                        </div>
+
+                        <div class="input_unit">
+                          <label>Position in the company</label>
+                          <input type="text" placeholder="ex: Ministry of silly walks" data-bind="position" name="position">
+                        </div>
+
+                        <div class="input_unit">
+                          <label>Email</label>
+                          <input type="text" placeholder="ex: john.doe@adyoulike.com" data-bind="email" name="email">
+                        </div>
+
+                      </div>
+                      <div class="form_unit">
+
+                        <div class="input_unit">
+                          <label>Mobile (optional)</label>
+                          <input type="text" placeholder="ex: +44 012121212" data-bind="mobile" name="mobile">
+                        </div>
+
+                        <div class="input_unit">
+                          <label>Twitter (optional)</label>
+                          <input type="text" placeholder="ex: https://twitter.com/johndoe" data-bind="twitter" name="twitter">
+                        </div>
+
+                        <div class="input_unit">
+                          <label>Facebook (optional)</label>
+                          <input type="text" placeholder="ex: https://www.facebook.com/johndoe00000" data-bind="facebook" name="facebook">
+                        </div>
+
+                        <div class="input_unit">
+                          <label>linkedIn (optional)</label>
+                          <input type="text" placeholder="ex: https://www.linkedin.com/in/john-doe-0000000" data-bind="linkedin" name="linkedin">
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div id="scrollable_wrapper">
+                      <div id="events_wrapper">
+                      </div>
+                    </div>
+
+                    <div id="signature_global_wrapper">
+                      <div id="signature_wrapper">
+                        <table id="signature" border="0" cellpadding="0" style="color:rgb(0,0,0);font-family:Arial,sans-serif;word-wrap:normal;line-height:normal;margin:0;">
+                          <tbody>
+                            <tr>
+                              <td width="110" style="vertical-align:top;font-family:Arial,sans-serif;line-height:normal;">
+                                <a href="http://www.adyoulike.com/" target="_blank">
+                                  <img style="margin:0 15px 0 0;" src="http://public.adyoulike.com/Signature/ADYOULIKE/assets/img/Logo_ADYOULIKE.gif" alt="Adyoulike" width="110" height="110" title="Adyoulike">
+                                </a>
+                              </td>
+                              <td style="border-left:1px solid #cccccc;vertical-align:top;font-family:Arial,sans-serif;font-size:17px;line-height:normal;padding:0 0 0 10px">
+                                <table border="0" cellpadding="0">
+                                  <tbody>
+                                    <tr>
+                                      <td colspan="2" valign="center" style="font-family:Arial,sans-serif;font-size:17px;line-height:normal;">
+                                        <span id="firstname">John</span>&nbsp;<span id="lastname">Doe</span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4" style="font-family:Arial,sans-serif;font-size:13px;line-height:normal;color:#676767;padding:0 0 8px 0;" id="position">
+                                        Ministry of silly walks
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="center" style="width:10px;font-family:Arial,sans-serif;font-size:11px;">
+                                        <img src="http://public.adyoulike.com/Signature/ADYOULIKE/assets/img/mail_icon.gif" height="15" width="15">
+                                      </td>
+                                      <td valign="center" style="height:15px;">
+                                        <a style="display:block;vertical-align:top;font-family:Arial,sans-serif;font-size:12px;padding-left:5px;text-decoration:none;color:#000000;line-height:15px;">
+                                          <span id="email">john.doe@adyoulike.com</span>
+                                        </a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="center" style="width:10px;font-family:Arial,sans-serif;font-size:11px;">
+                                        <img src="http://public.adyoulike.com/Signature/ADYOULIKE/assets/img/mobile_icon.gif" height="15" width="15">
+                                      </td>
+                                      <td valign="center" style="height:15px;">
+                                        <span style="display:block;vertical-align:top;font-family:Arial,sans-serif;font-size:12px;padding-left:5px;line-height:15px;">
+                                        <span id="mobile">+44 012121212</span>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="3" style="padding:8px 0 0 0;">
+                                        <a href="" id="twitter" style="display:none;text-decoration:none;color:rgb(0,0,0);margin-right:5px;" target="_blank">
+                                          <img src="http://public.adyoulike.com/Signature/ADYOULIKE/assets/img/twitter.gif" height="15" width="15">
+                                        </a>
+                                        <a href="" id="facebook" style="display:none;text-decoration:none;color:rgb(0,0,0);margin-right:5px;" target="_blank">
+                                          <img src="http://public.adyoulike.com/Signature/ADYOULIKE/assets/img/facebook.gif" height="15" width="15">
+                                        </a>
+                                        <a href="" id="linkedin" style="display:none;text-decoration:none;color:rgb(0,0,0);margin-right:5px;" target="_blank">
+                                          <img src="http://public.adyoulike.com/Signature/ADYOULIKE/assets/img/linkedin.gif" height="15" width="15">
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="4">
+                                <a href="https://goo.gl/maps/mf1Xreai59J2" target="_blank" style="text-decoration:none;color:#676767;font-size:10px;padding:0 10px 0 0;border-right:1px solid #676767;">PARIS</a>
+                                <a href="https://goo.gl/maps/ZM263CVQKWA2" target="_blank" style="text-decoration:none;color:#676767;font-size:10px;padding:0 10px 0 10px;border-right:1px solid #676767;">LONDON</a>
+                                <a href="https://goo.gl/maps/gHRsLVtkVhS2" target="_blank" style="text-decoration:none;color:#676767;font-size:10px;padding:0 10px 0 10px;border-right:1px solid #676767;">NEW-YORK</a>
+                                <a target="_blank" style="text-decoration:none;color:#676767;font-size:10px;padding:0 0px 0 20px;">BERLIN</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" id="event_sign_wrapper" style="padding:10px 0 0 0;">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <button class="btn" data-clipboard-action="copy" data-clipboard-target="#signature">Copy</button>
+                    </div>
                   </div>
                 </div>
             </section>
@@ -104,95 +235,14 @@
         </div>
 
         <div id="header_top_left">
-            <a href="https://www.adyoulike.com/" id="logo_link">
+            <a href = "https://www.adyoulike.com/" id = "logo_link">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
                 </svg>
             </a>
         </div>
 
-        <div id="header_top_right">
-            <nav>
-                <ul id="header_top_right_ul" class="blue">
-                    <li>
-                        <a id="demo_link" target="_blank" class="active" href="https://www.adyoulike.com/demo_request.php">Request a demo</a>
-                    </li>
-                    <li>
-                        <a id="signin_link" href="https://www.adyoulike.com/signin.php" target="_blank">Sign in</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
 
-        <div id="menu_left">
-            <div id="navigation_cursor" class="disabled"></div>
-            <div id="current_menu_text">MENU ENTRY</div>
-            <nav>
-                <ul>
-                    <li class="title">MENU</li>
-                    <li><a href="https://www.adyoulike.com/#native_advertising">HOME</a></li>
-                    <li><a href="https://www.adyoulike.com/#dna_technology">DNA TECHNOLOGY</a></li>
-                    <li><a href="https://www.adyoulike.com/#dna_performance">DNA PERFORMANCE</a></li>
-                    <li><a href="https://www.adyoulike.com/#dna_experience">DNA EXPERIENCE</a></li>
-                    <li><a href="https://www.adyoulike.com/#advertiser">ADVERTISER</a></li>
-                    <li><a href="https://www.adyoulike.com/#publisher">PUBLISHER</a></li>
-                    <li><a href="https://www.adyoulike.com/#programmatic">PROGRAMMATIC</a></li>
-                    <li class="separator"><a href="https://www.adyoulike.com/#case_studies">CASE STUDIES</a></li>
-                    <li><a href="https://www.adyoulike.com/ai_powered.php">AI-POWERED</a></li>
-                    <li><a href="https://www.adyoulike.com/ssp.php">SSP</a></li>
-                    <li><a href="https://www.adyoulike.com/creative_2.0.php">CREATIVE 2.0</a></li>
-                    <li><a href="https://www.adyoulike.com/careers.php">CAREERS</a></li>
-                    <li><a href="https://www.adyoulike.com/press.php">PRESS</a></li>
-                    <li><a href="http://native-generator.adyoulike.com/">NATIVE GENERATOR</a></li>
-                    <li><a href="http://support.adyoulike.com/uk/" target="_blank">SUPPORT</a></li>
-                    <li><a href="https://www.adyoulike.com/about_us.php">ABOUT US</a></li>
-                    <li><a href="https://www.adyoulike.com/blog/" target="_blank">NATIVE LAB</a></li>
-                    <li><a href="https://www.adyoulike.com/legal_mentions.php">LEGAL MENTIONS</a></li>
-                    <li class="hidden_border separator"><a href="https://www.adyoulike.com/privacy_policy.php">PRIVACY POLICY</a></li>
-                    <li class="hidden_menu"><a href="https://www.adyoulike.com/signin.php">REGISTER NOW!</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div id="menu_left_responsive">
-            <a href="#menu_left_responsive" id="close_menu" class="responsive"></a>
-            <div id="logo_menu">
-                <img src="https://www.adyoulike.com/img/logo_menu_responsive.png" alt="Adyoulike" />
-            </div>
-            <nav>
-                <ul>
-                    <li id="request_demo"><a href="http://native-generator.adyoulike.com">REQUEST A DEMO</a></li>
-                    <li class="active"><a href="https://www.adyoulike.com/#native_advertising">HOME</a></li>
-                    <li><a href="https://www.adyoulike.com/#advertiser">ADVERTISER</a></li>
-                    <li><a href="https://www.adyoulike.com/#publisher">PUBLISHER</a></li>
-                    <li><a href="https://www.adyoulike.com/#programmatic">PROGRAMMATIC</a></li>
-                    <li><a href="https://www.adyoulike.com/#case_studies">CASE STUDIES</a></li>
-                    <li><a href="https://www.adyoulike.com/ai_powered.php">AI-POWERED</a></li>
-                    <li><a href="https://www.adyoulike.com/ssp.php">SSP</a></li>
-                    <li><a href="https://www.adyoulike.com/creative_2.0.php">CREATIVE 2.0</a></li>
-                    <li><a href="https://www.adyoulike.com/careers.php">CAREERS</a></li>
-                    <li><a href="https://www.adyoulike.com/press.php">PRESS</a></li>
-                    <li><a href="https://www.adyoulike.com/about_us.php">ABOUT US</a></li>
-                    <li><a href="https://www.adyoulike.com/blog/" target="_blank">NATIVE LAB</a></li>
-                    <li><a href = "https://www.adyoulike.com/legal_mentions.php">LEGAL MENTIONS</a></li>
-                </ul>
-            </nav>
-            <span id="footer_menu" class="responsive">&copy; ADYOULIKE 2017</span>
-        </div>
-
-        <a href="#menu_left_responsive" id="responsive_menu"></a>
-
-        <nav id="contact_link" class="orange">
-            <ul>
-                <li>
-                  <a href="mailto:support@adyoulike.com" target="_blank" class="contact">
-                    <span class="icon"></span>
-                </a>
-              </li>
-            </ul>
-        </nav>
-
-        <script type="text/javascript" src="scripts/app.js"></script>
 
     </body>
 </html>
