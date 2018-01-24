@@ -37,6 +37,7 @@ h2 {
 #content{
   width:780px;
   padding:20px 20px 80px 20px;
+  margin:0 auto;
 }
 input[type="text"], input[type="email"], input[type="url"] {
   box-sizing:border-box;
@@ -102,10 +103,11 @@ input[type="submit"]:disabled {
     background-repeat: no-repeat;
 }
 .full_content {
-    padding-left: 450px;
-    width: 100%;
-    vertical-align: middle;
-    display: table-cell;
+  z-index:3;
+  position:relative;
+  width: 100%;
+  vertical-align: middle;
+  display: table-cell;
 }
 #main {
     height: 100%;
@@ -184,9 +186,6 @@ section {
     }
     .small_background {
         max-width: 315px;
-    }
-    .full_content {
-        padding-left: 315px;
     }
     #questions {
         margin-top: 0px;

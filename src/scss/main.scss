@@ -1,6 +1,30 @@
 @import "partials/layout.scss";
 @import "partials/loader.scss";
 
+.btn{
+  cursor:pointer;
+  position: absolute;
+  right: 0;
+  bottom:0;
+  border: none;
+  color: #fff;
+  background: #199cb6;
+  padding: 10px 30px;
+  font-family: 'Futura';
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+#clear_events{
+  position:relative;
+  margin: 0 auto;
+  width: 100px;
+  display:block;
+}
+#clear_events_wrapper{
+  margin:0 0 20px 0;
+}
 #form:after{
   content:"";
   display:block;
@@ -22,21 +46,7 @@ label{
   padding:10px;
   width: 500px;
   margin: 0 auto;
-  .btn{
-    cursor:pointer;
-    position: absolute;
-    right: 0;
-    bottom:0;
-    border: none;
-    color: #fff;
-    background: #199cb6;
-    padding: 10px 30px;
-    font-family: 'Futura';
-    font-weight: lighter;
-    letter-spacing: 1px;
-    font-size: 1em;
-    text-transform: uppercase;
-  }
+  height:300px;
   & > table{
     margin:0 auto;
   }
@@ -44,38 +54,44 @@ label{
 
 #scrollable_wrapper{
   overflow-x:scroll;
-  margin:0 0 40px 0;
+  overflow-y:hidden;
+  margin:0;
   position:relative;
+  box-shadow:0px 5px 50px #e3e3e3;
+  height:165px;
+}
+#skype{
+
 }
 
 #events_wrapper{
-  margin:20px 0;
-  padding:40px 0;
-  display:flex;
+  padding:20px 0 40px 0;
   width:100%;
-  justify-content:flex-start;
-  align-items:top;
-  .event_unit{
-    box-shadow:0px 5px 50px #e3e3e3;
-    transition-duration:0.3s;
-    border-radius:3px;
-    padding:30px 10px 10px 10px;
-    position:relative;
-    display:inline-block;
-    min-width:150px;
-    margin:0 10px;
-    border:1px solid #cccccc;
-    &:first-of-type{
-      margin:0 10px 0 0;
-    }
-    &:last-of-type{
-      margin:0 0 0 10px;
-    }
+  height:165px;
+  position:absolute;
+}
+.event_unit{
+  background-color:#ffffff;
+  box-shadow:0px 5px 50px #e3e3e3;
+  transition-duration:0.3s;
+  border-radius:3px;
+  padding:30px 10px 10px 10px;
+  position:relative;
+  display:inline-block;
+  width:200px;
+  margin:0 10px;
+  border:1px solid #cccccc;
+  vertical-align:top;
+  &:first-of-type{
+    margin:0 10px 0 0;
   }
-  .event_img{
-    display:block;
-    width:100%;
+  &:last-of-type{
+    margin:0 0 0 10px;
   }
+}
+.event_img{
+  display:block;
+  width:100%;
 }
 .radio_input{
   cursor:pointer;
@@ -119,4 +135,19 @@ label{
     opacity:0;
     transition-duration:0.3s;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
 }

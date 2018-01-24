@@ -21,20 +21,17 @@ $(document).ready(function() {
     console.error('Trigger:', e.trigger);
   });
 
-  //loader();
-  //resp_menu();
+  loader();
 
   events();
   bind();
 
-  /*
-    console.log("zblah");
-    var link = $(".radio_input:checked").closest(".event_unit").find(".event_img");
-    var src = $(".radio_input:checked").closest(".event_unit").find(".event_img").attr("src");
-    var img = $("<img class='event_img' style='width:250px;height:auto;display:block;' src='" + src + "'>");
-
-    $("#event_sign_wrapper").empty().append(img);
-*/
+  $("#clear_events").click(function() {
+    $(".radio_input").each(function() {
+      $(this).prop('checked', false);
+    });
+    $("#event_sign_wrapper").empty();
+  });
 
 
 });

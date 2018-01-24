@@ -13,11 +13,11 @@ var bind = function() {
     if($(this).val() == "") {
 
 
-      if(inputName == "facebook" || inputName == "twitter" || inputName == "linkedin") {
-        signatureElement.hide();
+      if(inputName == "linkedin") {
+        signatureElement.attr("href", "https://www.linkedin.com/company/adyoulike/");
       }
-      else if(inputName == "mobile") {
-        signatureElement.closest("tr").hide();
+      else if(inputName == "mobile" || inputName == "phone") {
+        signatureElement.closest("td").hide().prev("td").hide();
       }
       else{
         var txt = $(this).attr("placeholder");
@@ -28,11 +28,11 @@ var bind = function() {
     }
     else{
 
-      if(inputName == "facebook" || inputName == "twitter" || inputName == "linkedin") {
+      if(inputName == "linkedin") {
         signatureElement.show().attr("href", $(this).val());
       }
-      else if(inputName == "mobile") {
-        signatureElement.closest("tr").show();
+      else if(inputName == "mobile" || inputName == "phone") {
+        signatureElement.closest("td").show().prev("td").show();
         signatureElement.text($(this).val());
       }
       else if(inputName == "email") {

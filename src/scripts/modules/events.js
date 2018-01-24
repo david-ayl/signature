@@ -1,4 +1,4 @@
-var $ = require("jquery");
+var $    = require("jquery");
 
 var events = function() {
 
@@ -7,10 +7,11 @@ var events = function() {
   };
 
   var elemSign = function(img, url) {
-    return $("<a href='" + url + "' target='_blank' style='width: 300px;display: block;'><img src='" + img + "' style='display:block;width:100%;'></a>");
+    return $("<a href='" + url + "' target='_blank' style='text-decoration:none;width: 300px;display: block;'><img src='" + img + "' style='display:block;width:100%;'></a>");
   };
 
-  $.get("../events/images_events.json", function(data) {
+  $.get("http://public.adyoulike.com/Signature/events/images_events.json", function(data) {
+  /*$.get("../events/images_events.json", function(data) {*/
 
     data.forEach(function(_data) {
       var   _img = _data.image_url,
@@ -25,6 +26,8 @@ var events = function() {
         $("#event_sign_wrapper").empty().append(elemSign(thisimg, thisurl));
       });
     })
+
+    $("#events_wrapper").width(data.length * 220 + 200 + "px");
 
   });
 
