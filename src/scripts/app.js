@@ -30,6 +30,9 @@ $(document).ready(function() {
     $(".radio_input").each(function() {
       $(this).prop('checked', false);
     });
+    $("input[type='text']").each(function() {
+      $(this).val("").keyup();
+    });
     $("#event_sign_wrapper").empty();
   });
 
