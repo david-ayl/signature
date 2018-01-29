@@ -7,7 +7,7 @@ var events = function() {
   };
 
   var elemSign = function(img, url) {
-    return $("<a href='" + url + "' target='_blank' style='text-decoration:none;width: 200px;display: block;'><img src='" + img + "' style='display:block;width:100%;'></a>");
+    return $("<a data-test='test' href='" + url + "' target='_blank' style='text-decoration:none;width: 200px;display: block;'><img src='" + img + "' style='display:block;width:100%;'></a>");
   };
 
   $.get("http://public.adyoulike.com/Signature/events/images_events.json", function(data) {
