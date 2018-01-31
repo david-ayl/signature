@@ -40,8 +40,10 @@ var bind = function() {
         signatureElement.show().attr("href", $(this).val());
       }
       else if(inputName == "mobile" || inputName == "phone") {
+        var _val = $(this).val();
         signatureElement.closest("td").show().prev("td").show();
-        signatureElement.text($(this).val());
+        signatureElement.html(_val.replace("+", "&plus;"));
+        signatureElement.closest("td").prev("td").find("a").attr("href", _val);
       }
       else if(inputName == "skype") {
         signatureElement.show().attr("href", "skype:" + $(this).val() + "?call");
