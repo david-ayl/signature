@@ -9,7 +9,9 @@
 }
 
 /* General */
-
+a[href*="www.canneslions.com"], a[href*="https://www.adyoulike.com/"]{
+  width: 398px!important;
+}
 body, html {
     font-family: "Muli";
     font-weight: 300;
