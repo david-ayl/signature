@@ -141,3 +141,4 @@ var responsive_menu = function() {
 
 bind()
 events()
+new ClipboardJS('.btn')
